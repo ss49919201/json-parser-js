@@ -10,6 +10,8 @@ class UnexpectedFirstCharacter extends Error {
   }
 }
 
+type ParseFn = (tokens: Token[]) => unknown;
+
 function parseString(tokens: Token[]): string {
   assert(
     tokens[0].type === "quotation-mark",
@@ -29,8 +31,6 @@ function parseString(tokens: Token[]): string {
 function throwUnexpectedFirstTokenError(tokens: Token[]): never {
   throw new UnexpectedFirstCharacter(tokens[0]);
 }
-
-type ParseFn = typeof parseString | typeof throwUnexpectedFirstTokenError;
 
 const firstTokenToParseFn = {
   "quotation-mark": parseString,
