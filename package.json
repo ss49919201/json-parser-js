@@ -1,0 +1,14 @@
+{
+  "name": "json-parser",
+  "version": "1.0.0",
+  "description": "`json-parser-js` a hobby json parser.",
+  "scripts": {
+    "test": "vitest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
